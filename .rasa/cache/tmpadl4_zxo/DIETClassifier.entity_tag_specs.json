@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-answer",
+      "2": "I-answer",
+      "3": "L-answer",
+      "4": "U-answer",
+      "5": "B-bin",
+      "6": "I-bin",
+      "7": "L-bin",
+      "8": "U-bin",
+      "9": "B-location",
+      "10": "I-location",
+      "11": "L-location",
+      "12": "U-location",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-answer": 1,
+      "I-answer": 2,
+      "L-answer": 3,
+      "U-answer": 4,
+      "B-bin": 5,
+      "I-bin": 6,
+      "L-bin": 7,
+      "U-bin": 8,
+      "B-location": 9,
+      "I-location": 10,
+      "L-location": 11,
+      "U-location": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

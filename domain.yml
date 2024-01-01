@@ -1,0 +1,118 @@
+#version: "3.1"
+#
+#intents:
+#  - greet
+#  - goodbye
+#  - affirm
+#  - deny
+#  - mood_great
+#  - mood_unhappy
+#  - bot_challenge
+#
+#responses:
+#  utter_greet:
+#  - text: "Hey! How are you?"
+#
+#  utter_cheer_up:
+#  - text: "Here is something to cheer you up:"
+#    image: "https://i.imgur.com/nGF1K8f.jpg"
+#
+#  utter_did_that_help:
+#  - text: "Did that help you?"
+#
+#  utter_happy:
+#  - text: "Great, carry on!"
+#
+#  utter_goodbye:
+#  - text: "Bye"
+#
+#  utter_iamabot:
+#  - text: "I am a bot, powered by Rasa."
+#
+#session_config:
+#  session_expiration_time: 60
+#  carry_over_slots_to_new_session: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- goodbye
+- thanks
+- put_trash
+- ans
+- bin
+entities:
+- answer
+- bin
+slots:
+  location:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  answer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: answer
+  bin:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: bin
+
+responses:
+  utter_greet:
+  - text: Hi!
+  utter_put_trash:
+  - text: are you here to put trash
+  utter_right_trash:
+  - text: yes , its {answer}
+  utter_wrong_trash:
+  - text: no , its not {answer}
+  utter_right_bin:
+  - text: yes , it goes to {bin}
+  utter_wrong_bin:
+  - text: no , its not {bin}
+  utter_what_bin:
+  - text: what bin you put the trash
+  utter_tryagain:
+  - text: try again
+  utter_welldone:
+  - text: welldone,{answer} goes to the {bin}
+  utter_showme:
+  - text: show me the trash
+  utter_what_trash:
+  - text: what is the trash you want to throw
+  utter_not_trash:
+    - text: It is not {answer},try again
+  utter_goodbye:
+  - text: Bye
+  - text: Good Bye
+  utter_welcome:
+  - text: Welcome
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't understand. Can you please say it again?
+
+#forms:
+#  action_form:
+#    required_slots:
+#      answer:
+#        - type: from_entity
+#          entity: answer
+#forms:
+#  action_form:
+#    required_slots:
+#      answer:
+#        - type: from_text
+
+actions:
+- action_get_value
+- action_check_bin
+- action_timeout
+- action_clear_slots
+- action_repeat_request
+- action_fallback
+- action_custom_fallback

@@ -1,0 +1,101 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+
+- intent: put_trash
+  examples: |
+    - i need to put out trash 
+    - put trash out 
+    - throw garbage 
+    - i want to throw this paper 
+    - i want to throw this plastic
+    - i want to throw this cardboard
+    - i want to throw this polythene
+- intent: ans
+  examples: |
+    - its [paper](answer)
+    - [paper](answer)
+    - its [cardboard](answer)
+    - [cardboard](answer)
+    - its [plastic](answer)  
+    - [plastic](answer) 
+    - [polythene](answer) 
+    - its [polythene](answer) 
+
+- intent: bin
+  examples: |
+    - [orange bin](bin)
+    - [non recycle bin](bin)
+    - [green bin](bin)
+    - [recycle bin](bin)
+    - [blue bin](bin)
+  
+
+- intent: thanks
+  examples: | 
+    - thanks
+    - thank you
+    - OK

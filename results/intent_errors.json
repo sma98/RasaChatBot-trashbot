@@ -1,0 +1,10 @@
+[
+  {
+    "text": "[recycle bin] (bin)",
+    "intent": "blue_bin",
+    "intent_prediction": {
+      "name": "green_bin",
+      "confidence": 0.44007471203804016
+    }
+  }
+]

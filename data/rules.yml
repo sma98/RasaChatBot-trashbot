@@ -1,0 +1,61 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+#
+#- rule: Say 'I am a bot' anytime the user challenges
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot
+
+- rule: clear the slots after trash put out
+  steps:
+  - intent: bin
+  - action: action_check_bin
+  - action: action_clear_slots
+
+- rule: if give answer get action value
+  steps:
+  - intent: ans
+  - action : action_get_value
+
+- rule: action fall back
+  steps:
+  - intent: ans
+  - action : action_get_value
+#- rule: Clear Slots Rule
+#  steps:
+#  - action: action_check_bin
+#  - action: action_clear_slots
+
+
+#- rule: Trigger timeout if no user response
+#  condition:
+#  - active_loop: null
+#  steps:
+#  - intent: null
+#  - action: action_timeout
+#- rule: Trigger timeout if no user response
+#  steps:
+#    - intent: put_trash
+#      silent_fail: true
+#    - action: action_timeout
+#- rule: Activate trash
+#  steps:
+#  - intent: paper_ans
+#  - action: action_form
+#  - active_loop: action_form
+#
+#- rule: submit trash
+#  condition:
+#  - active_loop: action_form
+#  steps:
+#    - action: action_form
+#    - active_loop: null
+#    - slot_was_set:
+#        requested_slot:null
+#    - action: utter_not_trash

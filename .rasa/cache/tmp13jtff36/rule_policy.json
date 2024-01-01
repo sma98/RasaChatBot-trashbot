@@ -1,0 +1,28 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"action_form\"}, \"slots\": {\"answer\": [1.0]}, \"user\": {\"entities\": [\"answer\"], \"intent\": \"paper_ans\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_form\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"action_get_value\"}, \"slots\": {\"answer\": [1.0]}, \"user\": {\"entities\": [\"answer\"], \"intent\": \"paper_ans\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_get_value\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"utter_right_trash\"}, \"slots\": {\"answer\": [1.0]}, \"user\": {\"entities\": [\"answer\"], \"intent\": \"paper_ans\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"utter_right_trash\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"utter_what_bin\"}, \"slots\": {\"answer\": [1.0]}, \"user\": {\"entities\": [\"answer\"], \"intent\": \"paper_ans\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"utter_welldone\"}, \"slots\": {\"answer\": [1.0], \"bin\": [1.0]}, \"user\": {\"entities\": [\"bin\"], \"intent\": \"green_bin\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"utter_welcome\"}, \"slots\": {\"answer\": [1.0], \"bin\": [1.0]}, \"user\": {\"intent\": \"thanks\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"utter_welcome\"}}, {\"active_loop\": {\"name\": \"action_form\"}, \"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"slots\": {\"answer\": [1.0], \"bin\": [1.0]}, \"user\": {\"intent\": \"thanks\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - action_form",
+      "handling active loops and forms - action_form - action_listen",
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "predicting default action with intent session_start"
+    ]
+  }
+}
